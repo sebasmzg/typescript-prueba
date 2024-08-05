@@ -1,5 +1,5 @@
 import { UsersController } from "./users.controllers";
-import { IBodyRequestLogin, IBodyResponseLogin } from "../models/user.model";
+import { IBodyRequestLogin} from "../models/user.model";
 import { BASE_URL } from "./URL-base";
 
 const form = <HTMLFormElement> document.getElementById('form-login')
