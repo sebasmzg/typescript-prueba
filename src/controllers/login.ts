@@ -32,7 +32,7 @@ form.addEventListener('submit',async (e: Event)=>{
             sessionStorage.setItem('password', dataToLogin.password);
             showLoading();
             setTimeout(() => {
-                window.location.href = './src/views/home.html';
+                window.location.href = './src/views/home/home.html';
             }, 1500);
         } else {
             Swal.fire({
