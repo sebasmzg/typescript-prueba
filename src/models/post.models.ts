@@ -1,6 +1,21 @@
 //-------- POST MODELS --------
 
-export interface IPost {
+export interface IPostRequest {
+    title:                    string;
+    body:                     string;
+    creationDate:             Date;
+    creator:                  string;
+    estimatedPublicationDate: Date;
+    status:                   string;
+    approvalPercentage:       number;
+    corrections:              string;
+    platform:                 string;
+    postUrl:                  string;
+    multimediaUrl:            string;
+}
+
+
+export interface IPostResponse {
     postByUser:               number;
     title:                    string;
     body:                     string;
