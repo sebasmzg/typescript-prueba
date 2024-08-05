@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <header>
+            <section class="header-container">
+              <h1 id="header">Data Leaks Gates</h1>
+              <nav>
+                <ul class="nav-list">
+                  <li><a href="../../views/home/home.html">Home</a></li>
+                  <li><button id="logout">logout</button></li>
+                </ul>
+              </nav>
+            </section>
+          </header>
+            <main>
+              <section class="main-container">
+                <form id="addCity-form" action="">
+                        <h2>Add post</h2>
+                        <input
+                          type="text"
+                          class="addCity-input"
+                          id="new-city"
+                          placeholder="City"
+                        />
+                        <input
+                          type="text"
+                          class="addCity-input"
+                          id="new-country"
+                          placeholder="Country"
+                        />
+                        <textarea
+                          class="addCity-textarea"
+                          id="newCity-description"
+                          placeholder="Analysis description"
+                        ></textarea>
+                        <input type="text" id="new-url" class="addCity-input" placeholder="Image URL">
+                        <div class="button-container">
+                          <button type="submit" class="addCity-button">Submit</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+    <script type="module" src="../../controllers/post.ts"></script>
+</body>
+</html>
