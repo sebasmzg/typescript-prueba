@@ -9,7 +9,7 @@ export class PostTemplate {
     } 
 
     //metodo para crear la tarjeta
-    postTemplate(data: IPostResponse, color: string, quality: string){
+    PostTemplate(data: IPostResponse, color: string, quality: string){
         //creacion de elementos, agrefar clases y contenido
 
         //post container
@@ -54,12 +54,12 @@ export class PostTemplate {
         //publication date
         const publicationDate = <HTMLParagraphElement> document.createElement('p');
         publicationDate.classList.add('post-publicationDate');
-        publicationDate.textContent = data.estimatedPublicationDate.toString();
+        publicationDate.textContent = `Publication date: ${data.estimatedPublicationDate.toString()}`
 
         //creation date
         const creationDate = <HTMLParagraphElement> document.createElement('p');
         creationDate.classList.add('post-creationDate');
-        creationDate.textContent = data.creationDate.toString();
+        creationDate.textContent = `Creation date: ${data.creationDate.toString()}`;
 
         //buttons container
         const buttonsDiv = <HTMLDivElement> document.createElement('div');
