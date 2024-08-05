@@ -23,7 +23,7 @@ export class PostController {
         const res: Response = await fetch(`${this.url}${endpoint}`, reqOptions);
         console.log(res.status);
         if (res.status !== 201) {
-            throw new Error(`Error: ${res.status}`);
+            throw new Error(`Error: ${res.statusText}`);
         }
         const postResponse: IPostResponse = await res.json();
         return postResponse;
