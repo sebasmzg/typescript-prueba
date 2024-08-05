@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./post.css">
     <title>Document</title>
 </head>
 <body>
@@ -20,29 +21,36 @@
           </header>
             <main>
               <section class="main-container">
-                <form id="addCity-form" action="">
+                <form id="addPost-form" action="">
                         <h2>Add post</h2>
                         <input
                           type="text"
-                          class="addCity-input"
-                          id="new-city"
-                          placeholder="City"
+                          class="addPost-input"
+                          id="post-title"
+                          placeholder="Title"
                         />
-                        <input
-                          type="text"
-                          class="addCity-input"
-                          id="new-country"
-                          placeholder="Country"
-                        />
+                        <select id="post-platform">
+                            <option value="1">instagram</option>
+                            <option value="2">facebook</option>
+                            <option value="3">X</option>
+                            <option value="4">linkedin</option>
+                            <option value="5">tiktok</option>
+                            <option value="6">youtube</option>
+                        </select>
                         <textarea
-                          class="addCity-textarea"
-                          id="newCity-description"
+                          class="addPost-textarea"
+                          id="post-description"
                           placeholder="Analysis description"
                         ></textarea>
-                        <input type="text" id="new-url" class="addCity-input" placeholder="Image URL">
+                        <input type="text" id="post-image" class="addPost-input" placeholder="Image URL">
+                        <select id="post-status">
+                            <option value="1">Pending</option>
+                            <option value="2">Publicated</option>
+                        </select>
                         <div class="button-container">
-                          <button type="submit" class="addCity-button">Submit</button>
+                          <button type="submit" class="addPost-button">Submit</button>
                         </div>
+                        
                     </form>
                 </section>
             </main>

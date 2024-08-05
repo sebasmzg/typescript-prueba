@@ -1,5 +1,40 @@
 import Swal from 'sweetalert2';
 
+import { PostController } from './post.controllers';
+import { BASE_URL } from './URL-base';
+
+const endpoint:string = 'posts'
+const postController = new PostController(BASE_URL);
+postController.getAllPosts(endpoint);
+
+//render posts
+
+async function renderPosts(){
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* logout function */
 export function logout(){
     const logout = document.getElementById('logout') as HTMLButtonElement;
