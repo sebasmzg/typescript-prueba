@@ -6,6 +6,7 @@ export class PostController {
         this.url = url;
     }
 
+
     async CreatePost(data: IPostRequest,endpoint:string): Promise<IPostResponse> {
         const headers: Headers = new Headers({
             "Content-Type": "application/json",
@@ -16,6 +17,7 @@ export class PostController {
             headers,
             body: JSON.stringify(data)
         };
+
         const res: Response = await fetch(`${this.url}${endpoint}`, reqOptions);
         console.log(res.status);
         if (res.status !== 201) {
@@ -32,6 +34,7 @@ export class PostController {
         if(res.status !== 200){
             throw new Error(`Error: ${res.status}`);
         }
+
         const postResponse: IPostResponse[] = await res.json();
         return postResponse;
     }
