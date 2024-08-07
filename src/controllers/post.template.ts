@@ -19,7 +19,11 @@ export class PostTemplate {
 
         //post image
         const imageDiv = <HTMLDivElement> document.createElement('div');
-        imageDiv.classList.add('post-image');
+        imageDiv.classList.add('post-div-image');
+
+        const image = <HTMLImageElement> document.createElement('img');
+        image.classList.add('post-image');
+        image.src = data.multimediaUrl;
 
 
         //info container
@@ -54,12 +58,12 @@ export class PostTemplate {
         //publication date
         const publicationDate = <HTMLParagraphElement> document.createElement('p');
         publicationDate.classList.add('post-publicationDate');
-        publicationDate.textContent = `Publication date: ${data.estimatedPublicationDate.toString()}`
+        publicationDate.textContent = `Publication date: ${data.estimatedPublicationDate}`
 
         //creation date
         const creationDate = <HTMLParagraphElement> document.createElement('p');
         creationDate.classList.add('post-creationDate');
-        creationDate.textContent = `Creation date: ${data.creationDate.toString()}`;
+        creationDate.textContent = `Creation date: ${data.creationDate}`;
 
         //buttons container
         const buttonsDiv = <HTMLDivElement> document.createElement('div');
@@ -85,6 +89,9 @@ export class PostTemplate {
         infoButton.textContent = 'Info';
         infoButton.dataset.id = data.id.toString();
         infoButton.dataset.action = 'info';
+
+        //image container
+        imageDiv.appendChild(image);
 
         //quality container elements
         qualitycontainer.appendChild(dontallowedWordcontainer);

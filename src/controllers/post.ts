@@ -3,6 +3,7 @@ import swal from "sweetalert";
 import { IPostRequest } from "../models/post.models";
 import { PostController } from "./post.controllers";
 import { BASE_URL } from "./URL-base";
+import { logout } from "./logout";
 
 const endpoint: string = 'posts';
 
@@ -52,9 +53,11 @@ form.addEventListener('submit',async (e:Event)=>{
     }
 })
 
-function formatDate(date: Date): string {
+export function formatDate(date: Date): string {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
 }
+
+logout();
