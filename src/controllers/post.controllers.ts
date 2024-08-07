@@ -8,12 +8,7 @@ export class PostController {
     async CreatePost(data: IPostRequest,endpoint:string): Promise<IPostResponse> {
         const headers: Headers = new Headers({
             "Content-Type": "application/json",
-            "Content-Length": "<calculated when request is sent>",
-            "Host": "<calculated when request is sent>",
-            "User-Agent": "PostmanRuntime/7.37.3",
-            "accept": "*/*",
-            "Accept-Encoding": "gzip, deflate, br",
-            "connection": "keep-alive"
+            "x-user-email": `${sessionStorage.getItem("email")}`,
         }); 
         const reqOptions: RequestInit = {
             method: "POST",

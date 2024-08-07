@@ -3,9 +3,9 @@
 export interface IPostRequest {
     title:                    string;
     body:                     string;
-    creationDate:             Date;
+    creationDate:             string;
     creator:                  string;
-    estimatedPublicationDate: Date;
+    estimatedPublicationDate: string;
     status:                   string;
     approvalPercentage:       number;
     corrections:              string;
@@ -19,8 +19,8 @@ export interface IPostResponse {
     postByUser:               number;
     title:                    string;
     body:                     string;
-    creationDate:             Date;
-    estimatedPublicationDate: Date;
+    creationDate:             string;
+    estimatedPublicationDate: string;
     status:                   string;
     approvalPercentage:       number;
     corrections:              string;
