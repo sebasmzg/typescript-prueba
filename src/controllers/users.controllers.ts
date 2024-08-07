@@ -22,7 +22,6 @@ export class UsersController {
             body: JSON.stringify(data)
         };
         const res: Response = await fetch(`${this.url}auth/login`, reqOptions);
-        console.log(res.statusText);
         
         if(res.status !== 201){
             throw new Error(`Error: ${res.status}`);
