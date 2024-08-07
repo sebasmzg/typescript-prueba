@@ -23,8 +23,7 @@ form.addEventListener('submit',async (e: Event)=>{
         
         const loginUserControllers: UsersController = new UsersController(BASE_URL);
         const resultLogin = await loginUserControllers.login(dataToLogin);
-        
-        console.log('user: entra', resultLogin);
+
         
         form.reset();
         if(resultLogin.message === 'Login successful'){

@@ -1,4 +1,48 @@
 import Swal from 'sweetalert2';
+import { PostTemplate } from './post.template';
+import { PostController } from './post.controllers';
+import { BASE_URL } from './URL-base';
+
+const postContainer = document.getElementById('post-container') as HTMLDivElement;
+const endpoint:string = 'posts'
+const postController = new PostController(BASE_URL);
+postController.getAllPosts(endpoint);
+
+
+//render posts
+
+async function renderPosts(){
+    try {
+        const response = await postController.getAllPosts(endpoint);
+        const posts = response;
+        postContainer.innerHTML = '';
+        posts.forEach(async(data)=>{
+            const postTemplate = new PostTemplate(postContainer);
+            postTemplate.PostTemplate(data, '#f1f1f1', '75');
+        })
+    } catch (error) {
+        console.log(error);
+    }   
+}
+renderPosts();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* logout function */
 export function logout(){
