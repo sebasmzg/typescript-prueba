@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./post.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <header>
+            <section class="header-container">
+              <h1 id="header">Data Leaks Gates</h1>
+              <nav>
+                <ul class="nav-list">
+                  <li><a href="../../views/home/home.html">Home</a></li>
+                  <li><button id="logout">logout</button></li>
+                </ul>
+              </nav>
+            </section>
+          </header>
+            <main>
+              <section class="main-container">
+                <form id="addPost-form" action="">
+                        <h2>Add post</h2>
+                        <input
+                          type="text"
+                          class="addPost-input"
+                          id="post-title"
+                          placeholder="Title"
+                        />
+                        <input type="text" id="post-platform" placeholder="Social network">
+                        <textarea
+                          class="addPost-textarea"
+                          id="post-description"
+                          placeholder="Analysis description"
+                        ></textarea>
+                        <label for="post-date">Estimate publication date</label>
+                        <input type="date" id="post-date">
+                        <input type="text" id="post-image" class="addPost-input" placeholder="Image URL">
+                        <div class="button-container">
+                          <button type="submit" class="addPost-button">Submit</button>
+                        </div>
+                        
+                    </form>
+                </section>
+            </main>
+    <script type="module" src="../../controllers/post.ts"></script>
+</body>
+</html>
