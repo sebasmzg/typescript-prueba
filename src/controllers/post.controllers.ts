@@ -5,6 +5,7 @@ export class PostController {
     constructor(url: string) {
         this.url = url;
     }
+
     async CreatePost(data: IPostRequest,endpoint:string): Promise<IPostResponse> {
         const headers: Headers = new Headers({
             "Content-Type": "application/json",

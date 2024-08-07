@@ -3,6 +3,7 @@
 export interface IPostRequest {
     title:                    string;
     body:                     string;
+
     creationDate:             string;
     creator:                  string;
     estimatedPublicationDate: string;
