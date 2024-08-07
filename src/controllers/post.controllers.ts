@@ -9,7 +9,7 @@ export class PostController {
     async CreatePost(data: IPostRequest,endpoint:string): Promise<IPostResponse> {
         const headers: Headers = new Headers({
             "Content-Type": "application/json",
-            "x-user-email": `${sessionStorage.getItem("email")}`,
+            "x-user-email": `${sessionStorage.getItem("email")}`
         }); 
         const reqOptions: RequestInit = {
             method: "POST",
@@ -27,7 +27,16 @@ export class PostController {
     }
 
     async PostsByUser(creator:string): Promise<IPostResponse[]> {
-        const res: Response = await fetch(`${this.url}posts/by-creator/${creator}`);
+        const headers: Headers = new Headers({
+            "Content-Type": "application/json",
+            "x-user-email": `${sessionStorage.getItem("email")}`
+        });
+        const reqOptions: RequestInit = {
+            method: "GET",
+            headers
+        };
+        
+        const res: Response = await fetch(`${this.url}posts/by-creator/${creator}`,reqOptions);
         console.log(res.statusText);
         if(res.status !== 200){
             throw new Error(`Error: ${res.status}`);

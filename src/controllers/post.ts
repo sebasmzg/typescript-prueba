@@ -11,16 +11,10 @@ const title = document.getElementById('post-title') as HTMLInputElement;
 const platform = document.getElementById('post-platform') as HTMLSelectElement;
 const body = document.getElementById('post-description') as HTMLInputElement;
 const image = document.getElementById('post-image') as HTMLInputElement;
-const status = document.getElementById('post-status') as HTMLSelectElement;
 const date = document.getElementById('post-date') as HTMLInputElement;
 
 const postController = new PostController(BASE_URL);
 
-const post = { 
-    title,platform,body,image,status,date
-}
-
-console.log(post);
 
 let creator = sessionStorage.getItem('email');
 let creatorName: string = (creator?.split('@')[0]) ??  '';
@@ -41,17 +35,18 @@ form.addEventListener('submit',async (e:Event)=>{
         multimediaUrl: image.value,
         postUrl: "http://example.com/post"
     }
-    console.log(data);
     
     try {
         const postResponse = await postController.CreatePost(data,endpoint);
         localStorage.setItem('post', JSON.stringify(postResponse));
+        console.log('post created',postResponse);
+        
         swal({
             title: 'Post created',
             text: 'Your post was created successfully',
             icon: 'success'
         });
-        console.log(postResponse);
+        sessionStorage.setItem('id',postResponse.creator.id.toString());
     } catch (error) {
         console.log(`error:${error}` );
     }
